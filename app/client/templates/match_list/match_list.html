@@ -1,15 +1,28 @@
 <template name="MatchList">
+
+  {{#ionView}}
+    {{#ionContent}}
+
   <div class="match-list">
 
 
       <div class="list">
-        {{#each partner}}
-          <a href="{{ pathFor 'Chatroom' MatchListId = _id }}">
-            <div class="item">{{getName}}</div>
-          </a>
-        {{/each}}
+        {{#with partner}}
+          {{#each this}}
+            <a href="{{ pathFor 'Chatroom' MatchListId = _id }}">
+              <div class="item">{{getName}}</div>
+            </a>
+          {{/each}}
+        {{else}}
+          No parnter
+        {{/with}}
       </div>
 
 
   </div>
+
+
+    {{/ionContent}}
+      {{/ionView}}
+
 </template>

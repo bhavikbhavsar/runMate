@@ -16,7 +16,7 @@ Template.MatchList.helpers({
     //     return Matching.find({Female:Meteor.userId(),Status:2});
     //   }
     // }
-    return Matching.find();
+    return Matching.find().count() > 0?  Matching.find(): false ;
   },
   getName:function () {
     if(isMale()){

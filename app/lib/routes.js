@@ -1,6 +1,6 @@
 Router.configure({
   layoutTemplate: 'MasterLayout',
-  // loadingTemplate: 'LoadingSpinner',
+  loadingTemplate: 'Loading',
   notFoundTemplate: 'NotFound'
 });
 
@@ -26,7 +26,9 @@ Router.onBeforeAction(function () {
   this.next();
 }, {only: ['Login']});
 
-Router.route('Login');
+Router.route('Login',{
+  path:"/"
+});
 
 
 Router.route('Chatroom',{
@@ -46,7 +48,8 @@ Router.route('Home',{
 Router.route('Profile');
 Router.route('MatchList',{
   waitOn:function (argument) {
-    return [Meteor.subscribe('getMyMatchedList'), Meteor.subscribe('allUserWithOutMe',Meteor.user().profile.gender)];
+    if(Meteor.user())
+      return [Meteor.subscribe('getMyMatchedList'), Meteor.subscribe('allUserWithOutMe',Meteor.user().profile.gender)];
    }
 });
 
