@@ -1,19 +1,20 @@
 <template name="Login">
   <div class="login">
-  {{#ionView}}
-    {{#ionContent}}
+    {{#ionView}}
+      {{#ionContent}}
 
-    <div style="text-align:center;height:300px;margin-top:200px;" >
-      <h1>Filmer</h1>
-      <h3>Meet, Eat</h3>
-    </div>
-
-      <div class="padding-horizontal">
-          <a class="button button-block button-positive loginWithFacebook" >
-            Facebook
-          </a>
+      <div style="text-align:center;height:300px;margin-top:200px;" >
+        <h1>Filmer</h1>
+        <h3>Meet, Eat</h3>
       </div>
-  {{/ionContent}}
-{{/ionView}}
+
+        <div class="padding-horizontal">
+          {{>loginButtons}}
+            <!-- <a class="button button-block button-positive loginWithFacebook" >
+              Facebook
+            </a> -->
+        </div>
+    {{/ionContent}}
+  {{/ionView}}
   </div>
 </template>
