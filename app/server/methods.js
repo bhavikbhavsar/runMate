@@ -14,25 +14,39 @@ Meteor.methods({
     }});
   },
   'createMatching':function (dataObject) {
-    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
+    // Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
+    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:2}});
 
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
 
-    console.log(matchingObj);
+    // console.log(matchingObj);
+    //
+    // if(matchingObj.Status > 1){
+    //
+    //   var Ids = [];
+    //   Ids.push(matchingObj.Male);
+    //   Ids.push(matchingObj.Female);
+    //
+    //   console.log(Ids);
+    //
+    //   Interest.remove({userId:{$in:Ids}});
+    // }
 
-    if(matchingObj.Status > 1){
-
-      var Ids = [];
-      Ids.push(matchingObj.Male);
-      Ids.push(matchingObj.Female);
-
-      console.log(Ids);
-
-      Interest.remove({userId:{$in:Ids}});
-    }
 
 
+  },
+  'sendMsg':function (dataObject) {
+    console.log('start sendMsg');
+    console.log(dataObject);
+    var modifier = {};
+    var chatObj = {};
+    chatObj.from = Meteor.userId();
+    chatObj.to = Meteor.userId() === dataObject.Male ? dataObject.Female : dataObject.Male;
+    chatObj.sendAt = new Date().getTime();
+    chatObj.text = dataObject.text;
+    modifier.$push = {chat:chatObj};
+    Matching.update(dataObject._id,modifier);
 
   }
 });

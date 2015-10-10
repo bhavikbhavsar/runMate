@@ -1,11 +1,24 @@
 <template name="Chatroom">
   <div class="chatroom">
-    {{#each Chat}}
-      {{> chatMessage}}
-    {{/each}}
+
+    <div class="chatBox">
+      {{#each Chat}}
+        {{> chatMessage}}
+      {{/each}}
+    </div>
+
+    <div class="input-group">
+      <input type="text" class="text form-control" placeholder="" aria-describedby="">
+      <span class="input-group-addon send" id="basic-addon2">Send</span>
+    </div>
+
   </div>
 </template>
 
 <template name="chatMessage">
-    
+    <div class="{{isMind}}">
+      <div class="bubble">
+        {{text}}
+      </div>
+    </div>
 </template>

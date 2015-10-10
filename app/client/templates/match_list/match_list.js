@@ -9,14 +9,14 @@ Template.MatchList.events({
 /*****************************************************************************/
 Template.MatchList.helpers({
   partner:function (argument) {
-    if(lodash.get(Meteor.user(),'profile.gender')){
-      if(isMale()){
-        return Matching.find({Male:Meteor.userId(),Status:2});
-      }else{
-        return Matching.find({Female:Meteor.userId(),Status:2});
-      }
-    }
-
+    // if(lodash.get(Meteor.user(),'profile.gender')){
+    //   if(isMale()){
+    //     return Matching.find({Male:Meteor.userId(),Status:2});
+    //   }else{
+    //     return Matching.find({Female:Meteor.userId(),Status:2});
+    //   }
+    // }
+    return Matching.find();
   },
   getName:function () {
     if(isMale()){

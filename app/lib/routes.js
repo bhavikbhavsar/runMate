@@ -29,6 +29,16 @@ Router.onBeforeAction(function () {
 Router.route('Login',{
   path:"/",
 });
+
+
+Router.route('Chatroom',{
+  path:'/Chatroom/:MatchListId',
+  waitOn:function () {
+    return [Meteor.subscribe('getChatroomById',this.params.MatchListId),Meteor.subscribe('AllUser')];
+  }
+});
+
+
 Router.route('Home',{
   waitOn:function () {
     return Meteor.subscribe('AllMovie');
@@ -36,11 +46,15 @@ Router.route('Home',{
 });
 
 Router.route('Profile');
-Router.route('MatchList');
+Router.route('MatchList',{
+  waitOn:function (argument) {
+    return [Meteor.subscribe('getMyMatchedList'), Meteor.subscribe('allUserWithOutMe',Meteor.user().profile.gender)];
+   }
+});
 
 Router.route('Partner',{
-  path:"food/:movieId?",
+  path:"food/:trackId?",
   waitOn:function () {
-    return Meteor.subscribe('AllInterest');
+    return Meteor.subscribe('AllInterestWithoutMatched');
   }
 });

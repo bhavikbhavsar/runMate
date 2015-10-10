@@ -72,7 +72,7 @@ Template.Partner.onRendered(function () {
               dataObject.Female=Meteor.userId();
               dataObject.Male=userId;
           }
-          dataObject.Movie = Router.current().params.movieId;
+          dataObject.trackId = Router.current().params.trackId;
 
           Meteor.call("createMatching", dataObject, function(error, result){
             if(error){
@@ -110,7 +110,7 @@ Template.Partner.onRendered(function () {
       $('.Nope').css('opacity',0);
     });
 
-  
+
 });
 
 
@@ -119,30 +119,30 @@ Template.Partner.onDestroyed(function () {
 
 
 
-Template.movieCard2.events({
-// Template.Partner.events({
-  'click .item.item-image':function (e) {
-
-    var userId = $(e.target).data('userid');
-    var dataObject = schema.matching;
-
-    if(isMale()){
-        dataObject.Male=Meteor.userId();
-        dataObject.Female=userId;
-    }else{
-        dataObject.Female=Meteor.userId();
-        dataObject.Male=userId;
-    }
-    dataObject.Movie = Router.current().params.movieId;
-
-    Meteor.call("createMatching", dataObject, function(error, result){
-      if(error){
-        console.log("error", error);
-      }else{
-        // alert('created');
-        Router.go('MatchList');
-      }
-    });
-
-  }
-});
+// Template.movieCard2.events({
+// // Template.Partner.events({
+//   'click .item.item-image':function (e) {
+//
+//     var userId = $(e.target).data('userid');
+//     var dataObject = schema.matching;
+//
+//     if(isMale()){
+//         dataObject.Male=Meteor.userId();
+//         dataObject.Female=userId;
+//     }else{
+//         dataObject.Female=Meteor.userId();
+//         dataObject.Male=userId;
+//     }
+//     dataObject.Movie = Router.current().params.movieId;
+//
+//     Meteor.call("createMatching", dataObject, function(error, result){
+//       if(error){
+//         console.log("error", error);
+//       }else{
+//         // alert('created');
+//         Router.go('MatchList');
+//       }
+//     });
+//
+//   }
+// });

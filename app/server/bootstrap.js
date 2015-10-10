@@ -35,7 +35,7 @@ Meteor.startup(function () {
       var movieData={
         userId:userId,
         fbID:fbId,
-        movieId:lodash.sample(movie),
+        trackId:lodash.sample(movie),
         Gender: gender
       };
 
