@@ -9,12 +9,12 @@
     {{#ionContent}}
 
     <div class="home">
-      <div class="list card">
+      <!-- <div class="list card"> -->
           {{#each movies}}
               {{> movieCard}}
           {{/each}}
 
-    </div>
+    <!-- </div> -->
     </div>
 
   {{/ionContent}}
@@ -25,10 +25,11 @@
 
 <template name="movieCard">
 
-  <a class="item item-thumbnail-left" href="{{ pathFor 'Partner' trackId=_id }}" >
-     <img src="{{pic}}">
-     <h2>{{name}}</h2>
-     <p>Nine Inch Nails</p>
-   </a>
+  <a class="item item-thumbnail-left card" href="{{ pathFor 'Partner' trackId=_id }}" style = "background-image: url({{pic}})">
+    <div class="overlay"></div>
+    <!-- <img src="{{pic}}"> -->
+    <h2>{{name}}</h2>
+    <p>Nine Inch Nails</p>
+  </a>
 
 </template>

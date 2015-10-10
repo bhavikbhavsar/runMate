@@ -26,3 +26,7 @@
 
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+
+@import "client/templates/chatroom/chatroom.scss";
+@import "client/templates/partner/partner.scss";
+@import "client/templates/home/home.scss";
