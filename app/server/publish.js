@@ -16,8 +16,9 @@ Meteor.publish('AllInterestWithoutMatchedBytrackId', function (trackId) {
   var boylist = lodash.map(MatchingList,'Male');
   var girllist = lodash.map(MatchingList,'Female');
   var Arr = lodash.union(boylist,girllist);
+
   console.log(Arr);
-  return Interest.find({_id:{$nin:Arr},trackId:trackId});
+  return Interest.find({userId:{$nin:Arr},trackId:trackId});
 });
 Meteor.publish('AllUser', function () {
   return Meteor.users.find();
