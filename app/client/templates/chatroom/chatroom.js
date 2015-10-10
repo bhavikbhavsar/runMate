@@ -32,9 +32,10 @@ Template.Chatroom.events({
 
 
 
-    Meteor.call("sendMsg", dataObject);
-    $('.text').val("");
-
+    if(dataObject.text!==""){
+      Meteor.call("sendMsg", dataObject);
+      $('.text').val("");
+    }
 
   }
 });

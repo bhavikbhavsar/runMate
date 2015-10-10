@@ -4,11 +4,9 @@ Meteor.startup(function () {
     { service: "facebook" },
     { $set: { appId: "1915957638628550", secret: "08e9bc7e0f9f85c5fe246fd1a296de7a" } }
   );
-
   Meteor.users.remove({});
   Interest.remove({});
-  Matching.remove({}); 
-
+  Matching.remove({});
 
   var ids = [];
   ids.push(560498514); //She is my gf!!!!
@@ -40,11 +38,6 @@ ids.push(839875251);
 ids.push(705687935);
 ids.push(557945711);
 ids.push(100000022215260);
-
-
-
-
-
     if(Meteor.users.find().count()===0){
       ids.forEach(function (element, index, array) {
 

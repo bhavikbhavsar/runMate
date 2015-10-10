@@ -24,6 +24,12 @@ Template.Partner.helpers({
   }
 });
 
+Template._myModal.helpers({
+  getfbid:function (id) {
+    return Meteor.users.findOne(id).profile.id;
+  }
+});
+
 /*****************************************************************************/
 /* Partner: Lifecycle Hooks */
 /*****************************************************************************/
@@ -80,6 +86,13 @@ Template.Partner.onRendered(function () {
           Meteor.call("createMatching", dataObject, function(error, result){
             if(error){
               console.log("error", error);
+            }else{
+              if(result)
+                IonModal.open('_myModal',{
+                  partner:Meteor.users.findOne(userId).profile.name,
+                  targetId:userId,
+                  myId:Meteor.userId()
+                });
             }
           });
 

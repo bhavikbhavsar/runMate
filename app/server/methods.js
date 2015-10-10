@@ -20,6 +20,8 @@ Meteor.methods({
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
 
+    return matchingObj.Status===2;
+
 
 
 

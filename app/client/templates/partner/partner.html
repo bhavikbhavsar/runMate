@@ -42,3 +42,16 @@
 
 
 </template>
+
+<!-- data-dismiss="modal" -->
+
+<template name="_myModal">
+  {{#ionModal title="Matched!"  }}
+    <div class="padding">
+      <div>You and {{partner}} liked each other</div>
+      {{getfbid targetId}}
+      {{getfbid myId}}
+
+    </div>
+  {{/ionModal}}
+</template>
