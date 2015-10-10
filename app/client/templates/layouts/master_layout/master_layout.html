@@ -6,14 +6,26 @@
   {{#ionBody}}
 
 
+      {{#unless isActiveRoute regex='Login'}}
+        {{> ionNavBar}}
+      {{/unless}}
+
+
+
 
       {{#ionNavView}}
         {{> yield}}
       {{/ionNavView}}
 
+      {{#unless isActiveRoute regex='Login'}}
         {{> Tabs}}
+      {{/unless}}
+
+
 
     {{/ionBody}}
+
+
 
 
 
