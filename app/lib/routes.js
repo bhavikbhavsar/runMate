@@ -26,9 +26,7 @@ Router.onBeforeAction(function () {
   this.next();
 }, {only: ['Login']});
 
-Router.route('Login',{
-  path:"/",
-});
+Router.route('Login');
 
 
 Router.route('Chatroom',{

@@ -2,15 +2,27 @@
 /* Chatroom: Style */
 /*****************************************************************************/
 .chatroom {
+  height: 100%;
+  position: relative;
 }
 
 
 .chatBox{
-  height: 400px;
+  // height: 400px;
+  // height: calc( 100% - 34px );
+  // width: calc(100% - 20px );
+  // position: relative;
+  height: 100%;
+}
+
+.input-group{
+  position: absolute;
+  bottom: 0;
 }
 
 
 .mine {
+  position: relative;
   text-align: left;
   .bubble {
     float: right;

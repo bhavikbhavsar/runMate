@@ -3,7 +3,19 @@
 
 
 
-   {{> yield}}
+  {{#ionBody}}
+
+
+
+      {{#ionNavView}}
+        {{> yield}}
+      {{/ionNavView}}
+
+        {{> Tabs}}
+
+    {{/ionBody}}
+
+
 
 
 

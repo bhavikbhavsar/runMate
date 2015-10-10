@@ -3,7 +3,7 @@
 /*****************************************************************************/
 Template.Chatroom.events({
   'click .send':function () {
-    alert("sending");
+    // alert("sending");
     // var text  = $('.text').val();
     // var dataObject = {};
     // dataObject.from = Meteor.userId();

@@ -23,7 +23,7 @@ iron:router
 
 accounts-facebook
 service-configuration
-fourseven:scss@2.0.0
+
 stevezhu:lodash
 zimme:active-route
 anti:fake
@@ -32,3 +32,7 @@ zeroasterisk:cordova-geolocation-background
 accounts-ui
 twbs:bootstrap
 erasaur:meteor-lodash
+
+meteoric:ionic
+meteoric:ionic-sass
+meteoric:ionicons-sass

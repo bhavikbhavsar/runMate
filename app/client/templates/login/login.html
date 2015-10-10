@@ -1,13 +1,20 @@
 <template name="Login">
-  <div class="login">
 
-      <div style="text-align:center;height:300px;margin-top:200px;" >
-        <h1>RunMate</h1>
-        <h3>Run, Make</h3>
-      </div>
+  {{#ionView}}
+    {{#ionContent}}
 
-        <div class="padding-horizontal">
-          {{>loginButtons}}
+    <div class="login">
+        <div style="text-align:center;height:300px;margin-top:200px;" >
+          <h1>RunMate</h1>
+          <h3>Run, Make</h3>
         </div>
-  </div>
+
+          <div class="padding-horizontal">
+            {{>loginButtons}}
+          </div>
+    </div>
+
+  {{/ionContent}}
+{{/ionView}}
+
 </template>

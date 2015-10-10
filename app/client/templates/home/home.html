@@ -1,15 +1,16 @@
 <template name="Home">
-  <div class="home">
+  {{#ionView}}
+    {{#ionContent}}
 
+    <div class="home">
+          {{#each movies}}
+              {{> movieCard}}
+          {{/each}}
+    </div>
 
+  {{/ionContent}}
+{{/ionView}}
 
-      {{#each movies}}
-
-          {{> movieCard}}
-
-      {{/each}}
-
-  </div>
 </template>
 
 
