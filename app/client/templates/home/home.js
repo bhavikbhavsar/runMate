@@ -9,6 +9,21 @@ tracks.push({_id:"zzkSS4PfhGvyhkfk8",name:"Lugard Road to Severn Road figure-of-
 /* Home: Event Handlers */
 /*****************************************************************************/
 Template.Home.events({
+  'click .logout':function (argument) {
+    Meteor.logout();
+  }
+});
+
+Template.movieCard.events({
+  'click .track':function () {
+    var trackId  = $('.track').data('trackid');
+    Meteor.call("updateMovie", trackId, function(error, result){
+      if(error){
+        console.log("error", error);
+      }
+      Router.go('Partner',{trackId:trackId});
+    });
+  }
 });
 
 /*****************************************************************************/

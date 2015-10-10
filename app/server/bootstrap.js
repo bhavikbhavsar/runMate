@@ -7,7 +7,7 @@ Meteor.startup(function () {
 
   Meteor.users.remove({});
   Interest.remove({});
-  Matching.remove({});
+  Matching.remove({}); 
 
 
   var ids = [];
