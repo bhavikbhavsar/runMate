@@ -8,7 +8,7 @@ Template.Partner.events({
 /* Partner: Helpers */
 /*****************************************************************************/
 Template.Partner.helpers({
-  partner:function (argument) {
+  partner:function () {
       if(lodash.get(Meteor.user(),'profile.gender')){
         var gender  = getTargetGender();
         if(Interest.find({movieId:Router.current().params.movieId,Gender:gender}).count()>0)
@@ -18,6 +18,9 @@ Template.Partner.helpers({
       }else{
         return false;
       }
+  },
+  gatName:function () {
+    return Meteor.users.findOne(this.userId).profile.name;
   }
 });
 
