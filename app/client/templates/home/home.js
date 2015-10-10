@@ -17,7 +17,19 @@ Template.Home.events({
 /*****************************************************************************/
 Template.Home.helpers({
   'movies':function () {
-    return ['asd',"asd"];
+    return [{
+      'movieId': 'abcde',
+      'location': 'Tuen Mun',
+      'description': 'This is a nice track',
+      'image': 'https://static.panoramio.com.storage.googleapis.com/photos/large/23710497.jpg',
+      'time': '10 Oct, 2015'
+    }, {
+      'movieId': 'qwert',
+      'location': 'Fo Tan',
+      'description': 'This is a bad track',
+      'image': 'http://www.kwuntung.net/tthp/life/06/0606/060625/IMG_2957.JPG',
+      'time': '15 Oct, 2015'
+    }];
   }
 });
 

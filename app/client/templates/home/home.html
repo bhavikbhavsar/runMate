@@ -16,7 +16,16 @@
 <template name="movieCard">
   <a class="link" href=""  >
     <div class="list card" style=""  >
-      H1
+      <div class="row">
+        <div class="col-xs-6 image-containter">
+          <img src="{{image}}">
+        </div>
+        <div class="col-xs-6 detail-container">
+          <h4>Location: {{location}}</h4>
+          <p>Description: {{description}}</p>
+          <p>{{time}}</p>
+        </div>
+      </div>
     </div>
   </a>
 </template>

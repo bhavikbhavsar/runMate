@@ -1,0 +1,21 @@
+/*****************************************************************************/
+/* Home: Style */
+/*****************************************************************************/
+.home {
+    .image-containter {
+        padding: 1em;
+        text-align: right;
+        img {
+            height: 7em;
+        }
+    }
+    .detail-container {
+        padding: 0.3em;
+        h4 {
+            font-size: 1.2em;
+        }
+        p {
+            font-size: 1em;
+        }
+    }
+}
