@@ -1,7 +1,27 @@
 /*****************************************************************************/
 /* main: Style */
 /*****************************************************************************/
+$appMainColor: rgba(255, 182, 0, 1.0);
+
 .main {
+}
+
+div.content.overflow-scroll.has-header.has-tabs {
+  background-color: rgba(240,153,5,1.0);
+}
+
+div.bar.bar-header.bar-stable {
+  background-color: $appMainColor;
+  border-color: rgba(0,0,0,0);
+
+  h1 {
+    color: #fff;
+  }
+}
+
+div.tabs {
+  border-color: rgba(240,153,5,1.0);
+  background-color: #fff;
 }
 
 %flex-bare-container {
@@ -30,3 +50,4 @@
 @import "client/templates/chatroom/chatroom.scss";
 @import "client/templates/partner/partner.scss";
 @import "client/templates/home/home.scss";
+@import "client/templates/login/login.scss";
