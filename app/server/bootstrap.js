@@ -30,7 +30,8 @@ Meteor.startup(function () {
       };
       var userId = Meteor.users.insert(dataObject);
 
-      var movie = lodash.map(Movies.find().fetch(),'_id');
+      var movie = ["DKFLnzXczYXqQ6xrn", "o9YLiEDZttyRJtWP8", "zzkSS4PfhGvyhkfk8"];
+
 
       var movieData={
         userId:userId,

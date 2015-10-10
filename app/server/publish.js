@@ -11,6 +11,14 @@ Meteor.publish('AllInterestWithoutMatched', function () {
   console.log(Arr);
   return Interest.find({_id:{$nin:Arr}});
 });
+Meteor.publish('AllInterestWithoutMatchedBytrackId', function (trackId) {
+  var MatchingList = Matching.find({$or:[ {Male:this.userId},{Female:this.userId}  ],Status:2}).fetch();
+  var boylist = lodash.map(MatchingList,'Male');
+  var girllist = lodash.map(MatchingList,'Female');
+  var Arr = lodash.union(boylist,girllist);
+  console.log(Arr);
+  return Interest.find({_id:{$nin:Arr},trackId:trackId});
+});
 Meteor.publish('AllUser', function () {
   return Meteor.users.find();
 });
