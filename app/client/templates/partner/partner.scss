@@ -39,9 +39,9 @@
   }
 
   .stack {
-
+    margin-top: 15%;
     width: 90%;
-    height: 65%;
+    height: 90%;
     @extend %flex-column-container;
     justify-content: center;
     align-items: center;
@@ -103,8 +103,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         margin: 8px;
-        width: 80vw;
-        height: 80vw;
+        width: 96%;
+        height: 100%;
       }
     }
     .card.in-deck:nth-child(3n) {

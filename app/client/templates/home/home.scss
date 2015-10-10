@@ -2,7 +2,7 @@
 /* Home: Style */
 /*****************************************************************************/
 .home {
-	.item.card {
+	.track-cell {
 		@extend %flex-column-container;
 		-webkit-justify-content: flex-end;
 		    -ms-flex-pack: end;
@@ -16,21 +16,25 @@
 		background-size: cover;
 		background-color: rgba(0,0,0,0);
 
-		height: 150px;
+		height: 180px;
 		
 		position: relative;
-		margin-top: 8px;
-		margin-bottom: 8px;
+		margin-bottom: 1px;
+		/*margin-top: 1px;*/
 
+
+		padding-left: 16px;
+		padding-right: 16px;
 		padding-bottom: 8px;
+
 
     border-color: rgba(0,0,0,0);
     border-width: 0;
 
-		box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
+		/*box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);*/
 
 		&:active {
-			box-shadow: 0 0px 2px rgba(0,0,0,0.4) inset;
+			box-shadow: 0 0px 4px rgba(0,0,0,0.4) inset;
 		}
 
 		.overlay {
@@ -38,14 +42,13 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			
-			height: 58px;
-			background-color: rgba(0,0,0,0.5);
-			z-index: -1;
-			/*background: linear-gradient(rgba(0,0,0,0.6) 10%, rgba(0,0,0,0.0));*/
+			top: 0;
+			/*background-color: rgba(0,0,0,0.5);*/
+			z-index: 1;
+			background: linear-gradient(rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.5));
 		}
 
-		h2 {
+		h3 {
 			margin: 0;
 			color: #fff;
 			z-index: 100;

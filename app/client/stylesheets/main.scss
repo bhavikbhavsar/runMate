@@ -1,26 +1,44 @@
 /*****************************************************************************/
 /* main: Style */
 /*****************************************************************************/
-$appMainColor: rgba(255, 182, 0, 1.0);
+$appMainColor: rgba(240,153,5,1.0);
 
 .main {
 }
 
+a, a:hover, a:visited, a:active, a:link{
+  text-decoration: none;
+  color: inherit;
+}
+
+a.tab-item.active {
+  color: $appMainColor;
+  i {
+    color: $appMainColor;
+  }
+}
+
+i.icon.ion-ios-arrow-back {
+  color: $appMainColor;
+}
+
 div.content.overflow-scroll.has-header.has-tabs {
-  background-color: rgba(240,153,5,1.0);
+  // background-color: rgba(240,153,5,1.0);
+  background-color: #efefef;
 }
 
 div.bar.bar-header.bar-stable {
-  background-color: $appMainColor;
+  background-color: #fff;
   border-color: rgba(0,0,0,0);
 
   h1 {
-    color: #fff;
+    color: $appMainColor;
   }
 }
 
 div.tabs {
-  border-color: rgba(240,153,5,1.0);
+  // border-color: rgba(240,153,5,1.0);
+  border-color: #efefef;
   background-color: #fff;
 }
 
