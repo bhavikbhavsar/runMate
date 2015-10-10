@@ -46,7 +46,17 @@ Template.Chatroom.helpers({
   Chat:function (argument) {
     return Matching.findOne().chat;
   },
-  isMind:function (argument) {
+  isMind:function () {
+    console.log(this);
+    return Meteor.userId()===this.from ? "mine" : "notmine";
+  }
+});
+Template.chatMessage.helpers({
+  Chat:function (argument) {
+    return Matching.findOne().chat;
+  },
+  isMind:function () {
+    console.log(this);
     return Meteor.userId()===this.from ? "mine" : "notmine";
   }
 });
