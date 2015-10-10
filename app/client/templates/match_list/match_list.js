@@ -18,6 +18,9 @@ Template.MatchList.helpers({
     // }
     return Matching.find().count() > 0?  Matching.find(): false ;
   },
+  lastChat:function () {
+    return (lodash.last(this.chat) && lodash.last(this.chat).text) || "";
+  },
   getName:function () {
     if(isMale()){
       return Meteor.users.findOne({_id:this.Female}).profile.name;

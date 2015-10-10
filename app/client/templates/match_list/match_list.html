@@ -1,5 +1,9 @@
 <template name="MatchList">
 
+  {{#contentFor "headerTitle"}}
+    <h1 class="title"> Matches  </h1>
+  {{/contentFor}}
+
   {{#ionView}}
     {{#ionContent}}
 
@@ -13,6 +17,7 @@
               <div class="item item-avatar">
                 <img src="http://graph.facebook.com/{{getfbid}}/picture?type=large&width=50&height=50" alt="">
                 <h2>{{getName}}</h2>
+                <p>{{lastChat}}</p>
               </div>
             </a>
           {{/each}}

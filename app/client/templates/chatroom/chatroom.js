@@ -49,6 +49,13 @@ Template.Chatroom.helpers({
   isMind:function () {
     console.log(this);
     return Meteor.userId()===this.from ? "mine" : "notmine";
+  },
+  getName:function () {
+    if(isMale()){
+      return Meteor.users.findOne({_id:Matching.findOne().Female}).profile.name;
+    }else{
+      return Meteor.users.findOne({_id:Matching.findOne().Male}).profile.name;
+    }
   }
 });
 Template.chatMessage.helpers({
@@ -58,7 +65,7 @@ Template.chatMessage.helpers({
   isMind:function () {
     console.log(this);
     return Meteor.userId()===this.from ? "mine" : "notmine";
-  }
+  },
 });
 
 /*****************************************************************************/
