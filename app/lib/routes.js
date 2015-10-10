@@ -56,6 +56,6 @@ Router.route('MatchList',{
 Router.route('Partner',{
   path:"food/:trackId",
   waitOn:function () {
-    return Meteor.subscribe('AllInterestWithoutMatchedBytrackId',this.params.trackId);
+    return [Meteor.subscribe('AllInterestWithoutMatchedBytrackId',this.params.trackId),Meteor.subscribe('AllUser')];
   }
 });
