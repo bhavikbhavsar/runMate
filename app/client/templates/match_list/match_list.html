@@ -10,7 +10,10 @@
         {{#with partner}}
           {{#each this}}
             <a href="{{ pathFor 'Chatroom' MatchListId = _id }}">
-              <div class="item">{{getName}}</div>
+              <div class="item item-avatar">
+                <img src="http://graph.facebook.com/{{getfbid}}/picture?type=large&width=50&height=50" alt="">
+                <h2>{{getName}}</h2>
+              </div>
             </a>
           {{/each}}
         {{else}}
