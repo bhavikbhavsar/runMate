@@ -20,6 +20,12 @@ Router.onBeforeAction(function () {
   this.next();
 }, {except: ['Login']});
 
+Router.onBeforeAction(function () {
+  if(Meteor.userId())
+    this.redirect('Home');
+  this.next();
+}, {only: ['Login']});
+
 Router.route('Login',{
   path:"/",
 });

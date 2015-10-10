@@ -13,11 +13,19 @@ schema.matching={
   "Male":"",
   "Female":"",
   "Movie":"",
-  "Status":0
+  "Status":0,
+  "chat":[],
 };
 
 schema.interest={
   "userId":"",
   "Gender":"",
   "Movie":"",
+};
+
+schema.chatObj={
+  "from":"",
+  "to":"",
+  "createdAt":"",
+  "text":""
 };

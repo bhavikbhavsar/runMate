@@ -24,12 +24,10 @@ iron:router
 accounts-facebook
 service-configuration
 fourseven:scss@2.0.0
-meteoric:ionic
-meteoric:ionicons-sass
-meteoric:ionic-sass
 stevezhu:lodash
 zimme:active-route
 anti:fake
 gwendall:swing
 zeroasterisk:cordova-geolocation-background
 accounts-ui
+twbs:bootstrap

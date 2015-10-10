@@ -17,7 +17,7 @@ Template.Home.events({
 /*****************************************************************************/
 Template.Home.helpers({
   'movies':function () {
-    return Movies.find();
+    return ['asd',"asd"];
   }
 });
 

@@ -10,7 +10,7 @@ Template.Partner.events({
 Template.Partner.helpers({
   partner:function (argument) {
       if(lodash.get(Meteor.user(),'profile.gender')){
-        var gender  = getTargetGender() ;
+        var gender  = getTargetGender();
         if(Interest.find({movieId:Router.current().params.movieId,Gender:gender}).count()>0)
           return Interest.find({movieId:Router.current().params.movieId,Gender:gender});
         else
@@ -30,7 +30,23 @@ Template.Partner.onCreated(function () {
 Template.Partner.onRendered(function () {
   var stack;
 
-    stack = gajus.Swing.Stack();
+  config = {
+    /**
+     * Invoked in the event of dragmove.
+     * Returns a value between 0 and 1 indicating the completeness of the throw out condition.
+     * Ration of the absolute distance from the original card position and element width.
+     *
+     * @param {Number} offset Distance from the dragStart.
+     * @param {HTMLElement} element Element.
+     * @return {Number}
+     */
+    throwOutConfidence: function (offset, element) {
+        console.log(offset);
+        return Math.min(Math.abs(offset) / (element.offsetWidth/10) ,1);
+    }
+};
+
+    stack = gajus.Swing.Stack(config);
 
 
     [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
@@ -73,6 +89,9 @@ Template.Partner.onRendered(function () {
           console.log("throwoutend");
         });
         card.on('dragmove', function (eventObject) {
+          console.log(eventObject);
+        });
+        card.on('dragmove', function (eventObject) {
           if(eventObject.throwDirection===1){
             $(eventObject.target).children('.Like').css('opacity',eventObject.throwOutConfidence);
             $(eventObject.target).children('.Nope').css('opacity',0);
@@ -90,6 +109,8 @@ Template.Partner.onRendered(function () {
       $('.Like').css('opacity',0);
       $('.Nope').css('opacity',0);
     });
+
+  
 });
 
 
