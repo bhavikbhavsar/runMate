@@ -6,10 +6,10 @@ Meteor.methods({
   'server/method_name': function () {
     // server method logic
   },
-  'updateMovie':function (movieId) {
+  'updateMovie':function (trackId) {
     Interest.upsert({userId:Meteor.userId()}, {$set:{
       fbID:Meteor.user().profile.id,
-      movieId:movieId,
+      trackId:trackId,
       Gender:Meteor.user().profile.gender
     }});
   },
@@ -20,18 +20,6 @@ Meteor.methods({
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
 
-    // console.log(matchingObj);
-    //
-    // if(matchingObj.Status > 1){
-    //
-    //   var Ids = [];
-    //   Ids.push(matchingObj.Male);
-    //   Ids.push(matchingObj.Female);
-    //
-    //   console.log(Ids);
-    //
-    //   Interest.remove({userId:{$in:Ids}});
-    // }
 
 
 

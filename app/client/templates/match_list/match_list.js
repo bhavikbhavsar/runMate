@@ -24,6 +24,13 @@ Template.MatchList.helpers({
     }else{
       return Meteor.users.findOne({_id:this.Male}).profile.name;
     }
+  },
+  getfbid:function (argument) {
+    if(isMale()){
+      return Meteor.users.findOne({_id:this.Female}).profile.id;
+    }else{
+      return Meteor.users.findOne({_id:this.Male}).profile.id;
+    }
   }
 });
 

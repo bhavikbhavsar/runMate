@@ -17,6 +17,9 @@
     <!-- </div> -->
     </div>
 
+
+    <!-- <button class="logout">logout</button> -->
+
   {{/ionContent}}
 {{/ionView}}
 
@@ -25,11 +28,10 @@
 
 <template name="movieCard">
 
-  <a class="item card" href="{{ pathFor 'Partner' trackId=_id }}" style = "background-image: url({{pic}})">
-    <div class="overlay"></div>
-    <!-- <img src="{{pic}}"> -->
-    <h2>{{name}}</h2>
-    <p>Nine Inch Nails</p>
-  </a>
+  <a class=" track item item-thumbnail-left" data-trackid={{_id}} >
+     <img src="{{pic}}">
+     <h2>{{name}}</h2>
+     <p>Nine Inch Nails</p>
+   </a>
 
 </template>
