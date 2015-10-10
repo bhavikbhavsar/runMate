@@ -1,0 +1,48 @@
+<template name="MasterLayout">
+  {{#ionBody}}
+
+{{#unless isActiveRoute regex='Login'}}
+ {{> ionNavBar}}
+{{/unless}}
+
+
+<!-- {{#ionSideMenuContainer}}
+
+      {{#ionSideMenus}}
+
+        {{#ionSideMenu}}
+          <div class="bar bar-header bar-dark">
+            <h1 class="title">Left Menu</h1>
+          </div>
+          <div class="content has-header">
+            <div class="list">
+              <div class="item item-icon-right" data-ion-menu-close>
+                Movie
+              </div>
+            </div>
+          </div>
+        {{/ionSideMenu}}
+
+      {{/ionSideMenus}}
+
+
+
+
+
+
+  {{#ionSideMenuContent}}
+
+
+   {{/ionSideMenuContent}}
+
+ {{/ionSideMenuContainer}} -->
+
+ {{#ionNavView}}
+   {{> yield}}
+ {{/ionNavView}}
+
+
+
+ {{/ionBody}}
+
+</template>

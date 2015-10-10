@@ -1,0 +1,85 @@
+<template name="Partner">
+  <div class="partner">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Partner</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+
+
+
+  {{#ionView}}
+    {{#ionContent}}
+        <ul class="stack">
+
+        {{#with partner }}
+
+            {{#each partner }}
+
+                <li class="card" data-userid={{userId}}  >
+
+
+                  <div class="item item-image" >
+                    <img src="http://graph.facebook.com/{{fbID}}/picture?type=large&width=300&height=445" data-userid={{userId}} >
+                  </div>
+                  <div class="item name">
+                    {{profile.name}}
+                  </div>
+                  <div class="rubber_stamp Nope">Nope</div>
+                  <div class="rubber_stamp Like">Like</div>
+                </li>
+
+            {{/each}}
+
+        {{else}}
+          <div class="item" >No Partner</div>
+        {{/with}}
+        </ul>
+
+    {{/ionContent}}
+  {{/ionView}}
+
+  </div>
+</template>
+
+
+
+<template name="movieCard2">
+  <li class="card" style="">
+    <!-- <div class="item">{{Title}}</div> -->
+    <div class="item item-image" data-userid={{userId}}>
+      <img src="http://graph.facebook.com/{{fbID}}/picture?type=large&width=300&height=445" data-userid={{userId}} >
+    </div>
+    <!-- <ali class="item item-icon-left item-icon-right" href="#">
+     <i class="icon ion-chatbubble-working"></i>
+     <i class="icon ion-ios-telephone-outline"></i>
+   </a> -->
+ </li>
+</template>
+
+<template name="_myPopover">
+  {{#ionPopover}}
+    <div class="content">
+      <div class="list">
+        <a class="item item-icon-right" href="{{ pathFor 'Home' }}" >
+          All Movies
+          {{> ionIcon icon="ios-arrow-right"}}
+        </a>
+        <a class="item item-icon-right" href="{{ pathFor 'MatchList' }}" >
+          Matched List
+          {{> ionIcon icon="ios-arrow-right"}}
+        </a>
+      </div>
+    </div>
+  {{/ionPopover}}
+</template>

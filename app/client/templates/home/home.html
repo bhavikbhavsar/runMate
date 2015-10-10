@@ -1,0 +1,51 @@
+<template name="Home">
+  <div class="home">
+
+
+    {{#contentFor "headerTitle"}}
+    <h1 class="title">Movies</h1>
+
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_myPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+
+
+{{#ionView}}
+  {{#ionContent}}
+
+      {{#each movies}}
+
+          {{> movieCard}}
+
+      {{/each}}
+
+  {{/ionContent}}
+{{/ionView}}
+
+  </div>
+</template>
+
+
+<template name="movieCard">
+  <a class="link" href=""  >
+    <div class="list card" style=""  >
+      <!-- <div class="item">{{Title}}</div> -->
+      <div class="item item-image">
+        <img src="{{Poster}}" data-movieid="{{_id}}">
+      </div>
+      <!-- <a class="item item-icon-left item-icon-right" href="#">
+       <i class="icon ion-chatbubble-working"></i>
+       <i class="icon ion-ios-telephone-outline"></i>
+     </a> -->
+    </div>
+  </a>
+</template>
