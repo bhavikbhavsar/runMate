@@ -11,8 +11,6 @@ Meteor.startup(function () {
 
 var ids = [];
 ids.push(560498514); //She is my gf!!!!
-
-
 ids.push(503674580);
 ids.push(100003743012797);
 ids.push(1428036985);

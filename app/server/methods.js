@@ -14,8 +14,8 @@ Meteor.methods({
     }});
   },
   'createMatching':function (dataObject) {
-    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
-    // Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:2}});
+    // Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
+    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:2}});
 
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
@@ -38,5 +38,13 @@ Meteor.methods({
     modifier.$push = {chat:chatObj};
     Matching.update(dataObject._id,modifier);
 
+  },
+  'setbadge':function (arr) {
+    console.log(arr);
+    Meteor.users.update({_id:{$in:arr}},{$set:{notice:true}});
+
+  },
+  'setNoticeFalse':function (argument) {
+    Meteor.users.update(Meteor.userId(),{$set:{notice:false}});
   }
 });

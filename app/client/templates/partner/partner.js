@@ -106,13 +106,25 @@ Template.Partner.onRendered(function () {
             if(error){
               console.log("error", error);
             }else{
-              if(result)
+              if(result){
                 IonModal.open('_myModal',{
                   partner:Meteor.users.findOne(userId).profile.name,
                   targetId:userId,
                   chatroomId:result,
                   myId:Meteor.userId()
                 });
+
+                var noticeId = [userId,Meteor.userId()];
+
+                Meteor.call("setbadge", noticeId , function(error, result){
+                  if(error){
+                    console.log("error", error); 
+                  }
+                  if(result){
+
+                  }
+                });
+              }
             }
           });
 

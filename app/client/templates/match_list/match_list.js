@@ -44,6 +44,14 @@ Template.MatchList.onCreated(function () {
 });
 
 Template.MatchList.onRendered(function () {
+  Meteor.call("setNoticeFalse", function(error, result){
+    if(error){
+      console.log("error", error);
+    }
+    if(result){
+
+    }
+  });
 });
 
 Template.MatchList.onDestroyed(function () {

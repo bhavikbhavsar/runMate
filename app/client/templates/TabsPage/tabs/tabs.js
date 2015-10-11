@@ -7,13 +7,16 @@ Template.Tabs.events({});
 /* Tabs: Helpers */
 /*****************************************************************************/
 Template.Tabs.helpers({
+  _isnotice:function (argument) {
+    return lodash.get(Meteor.user(),'notice') ? "1": "";
+  }
 });
 
 /*****************************************************************************/
 /* Tabs: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Tabs.created = function () {
-  Session.setDefault("chatUnreadNumber", 0);
+
 };
 
 Template.Tabs.rendered = function () {

@@ -3,14 +3,14 @@
     {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
       <!-- {{> ionTab title="Home" path="Home" icon="android-home"}} -->
       {{> ionTab title="Home" path="Home" icon="android-people"}}
-      {{> ionTab title="Matches"    path="MatchList" icon="android-chat"  }}
+      {{> ionTab title="Matches"    path="MatchList" icon="android-chat" badgeNumber=_isnotice  }}
 
     {{/ionTabs}}
   {{else}}
     {{#ionTabs style="ios"}}
       <!-- {{> ionTab title="Home" path="Home" iconOff="ios-home-outline" iconOn="ios-home"}} -->
       {{> ionTab title="Home" path="Home" iconOff="ios-people-outline" iconOn="ios-people"}}
-      {{> ionTab title="Matches"    path="MatchList" iconOff="ios-chatbubble-outline" iconOn="ios-chatbubble"  }}
+      {{> ionTab title="Matches"    path="MatchList" iconOff="ios-chatbubble-outline" iconOn="ios-chatbubble" badgeNumber=_isnotice  }}
     {{/ionTabs}}
   {{/if}}
 </template>
