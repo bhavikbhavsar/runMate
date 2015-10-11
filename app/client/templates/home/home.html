@@ -1,7 +1,7 @@
 <template name="Home">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title"> Tracks </h1>
+    <h1 class="title"> tracks </h1>
   {{/contentFor}}
 
 
@@ -33,7 +33,10 @@
     <div class="overlay"></div>
     <!-- <img src="{{pic}}"> -->
     <h3>{{name}}</h3>
-    <p>{{distict}} , {{distance}}</p>
+    <div class="general-info">
+      <p>{{distict}}</p>
+      <p>{{distance}}</p>
+    </div>
   </a>
 
 </template>

@@ -27,15 +27,40 @@
     justify-content: flex-start;
     align-items: center;
     color: #fff;
-    font-size: 1.3em;
+    font-size: 1rem;
     padding-left: 16px;
     height: 68px;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    background-color: rgba(0,0,0,0.4);
+    background-image: url(/image/mapBg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*filter: brightness(0.3);*/
+    /*-webkit-filter: brightness(0.3);*/
+    color: #555;
+    font-family: SourceSansPro-Regular;
+    
+    .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 68px;
+      background-color: rgba(255,255,255,0.25);
+      z-index: 0;
+    }
 
+    img {
+      margin-right: 8px;
+      height: 40%;
+    }
+
+    .detail {
+      z-index: 100;
+    }
   }
 
   .stack {
@@ -55,17 +80,14 @@
     }
     .item.name {
       height: 53px;
-      font-size: 14px;
-      line-height: 0;
+      font-size: 1.2rem;
       padding: 5px;
       margin: 0;
       line-height: 14px;
       text-align: left;
       color: #fff;
-    }
-    .item.item-image {
-      // max-height: 400px;
-      
+      font-family: SourceSansPro-Semibold;
+      letter-spacing: 0.03rem;
     }
     .card {
       @extend %flex-column-container;
@@ -228,9 +250,15 @@
     color:#efefef;
     margin-top: 4px;
     margin-bottom: 4px;
+    font-family: SourceSansPro-Regular;
+    letter-spacing: 0.04rem;
   }
 
   .start-chatting-btn {
+    
+    font-family: SourceSansPro-Light;
+    letter-spacing: 0.05rem;
+
     height: 40px;
     border: 1px solid $appMainColor;
     color: $appMainColor;

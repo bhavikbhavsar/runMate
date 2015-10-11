@@ -34,6 +34,10 @@
     border-radius: 5px;
     padding-left: 8px;
     padding-right: 8px;
+
+    letter-spacing: 0.05rem;
+    font-family: SourceSansPro-Regular;
+
   }
 
   span.input-group-addon.send{
@@ -44,6 +48,10 @@
     background-color: transparent;
     color: $appMainColor;
     cursor: pointer;
+
+    letter-spacing: 0.05rem;
+    font-family: SourceSansPro-Bold;
+
 
     &:active {
       color: #333;
@@ -61,6 +69,7 @@
 
     color: #222;
     letter-spacing: 0.05rem;
+    font-family: SourceSansPro-Regular;
 
     position: relative;
     max-width: 50vw;
@@ -97,6 +106,7 @@
 
     color: #222;
     letter-spacing: 0.05rem;
+    font-family: SourceSansPro-Regular;
 
     position: relative;
     max-width: 50vw;
