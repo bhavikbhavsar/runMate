@@ -8,7 +8,7 @@ Template.Tabs.events({});
 /*****************************************************************************/
 Template.Tabs.helpers({
   _isnotice:function (argument) {
-    return lodash.get(Meteor.user(),'notice') ? "1": "";
+    return lodash.get(Meteor.user(),'profile.unRead') || "";
   }
 });
 

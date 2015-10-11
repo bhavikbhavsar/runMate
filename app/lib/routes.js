@@ -26,6 +26,13 @@ Router.onBeforeAction(function () {
   this.next();
 }, {only: ['Login']});
 
+
+Router.onBeforeAction(function () {
+  Meteor.call("setRead");
+  this.next();
+
+}, {only: ['Chatroom','MatchList']});
+
 Router.route('Login',{
   path:"/"
 });

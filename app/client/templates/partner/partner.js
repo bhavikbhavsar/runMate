@@ -44,8 +44,15 @@ Template.Partner.helpers({
 });
 
 Template._myModal.helpers({
-  getfbid:function (id) {
-    return Meteor.users.findOne(id).profile.id;
+  getfbid:function (me) {
+    if(me){
+      return Meteor.user().profile.id;
+    }else {
+      return isMale()? this.femalefbId:this.malefbId;
+    }
+  },
+  partner:function () {
+    return isMale()? this.femaleName:this.maleName;
   }
 });
 
@@ -106,25 +113,25 @@ Template.Partner.onRendered(function () {
             if(error){
               console.log("error", error);
             }else{
-              if(result){
-                IonModal.open('_myModal',{
-                  partner:Meteor.users.findOne(userId).profile.name,
-                  targetId:userId,
-                  chatroomId:result,
-                  myId:Meteor.userId()
-                });
-
-                var noticeId = [userId,Meteor.userId()];
-
-                Meteor.call("setbadge", noticeId , function(error, result){
-                  if(error){
-                    console.log("error", error); 
-                  }
-                  if(result){
-
-                  }
-                });
-              }
+              // if(result){
+              //   IonModal.open('_myModal',{
+              //     partner:Meteor.users.findOne(userId).profile.name,
+              //     targetId:userId,
+              //     chatroomId:result,
+              //     myId:Meteor.userId()
+              //   });
+              //
+              //   var noticeId = [userId,Meteor.userId()];
+              //
+              //   Meteor.call("setbadge", noticeId , function(error, result){
+              //     if(error){
+              //       console.log("error", error);
+              //     }
+              //     if(result){
+              //
+              //     }
+              //   });
+              // }
             }
           });
 

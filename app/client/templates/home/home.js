@@ -39,8 +39,6 @@ Template.Home.onCreated(function () {
 });
 
 Template.Home.onRendered(function () {
-  console.log(this);
-  this.x= ReactiveVar("");
 
 
 

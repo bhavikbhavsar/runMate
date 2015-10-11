@@ -20,6 +20,28 @@ Meteor.methods({
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
 
+    if(matchingObj.Status===2){
+      // var ids = [];
+      // ids.push(matchingObj.Male);
+      // ids.push(matchingObj.Female);
+      // Meteor.users.update({_id:{$in:ids}},{$inc:{'profile.unRead':1}});
+
+      var modalMatchObj = schema.modalMatch;
+
+      // modalMatchObj.targetId = Meteor.userId()=== matchingObj.Male? matchingObj.Female : matchingObj.Male;
+      // modalMatchObj.partner = Meteor.users.findOne(modalMatchObj.targetId).profile.name;
+      modalMatchObj.chatroomId = matchingObj._id;
+      modalMatchObj.maleName = Meteor.users.findOne(matchingObj.Male).profile.name;
+      modalMatchObj.malefbId = Meteor.users.findOne(matchingObj.Male).profile.id;
+      modalMatchObj.femaleName =  Meteor.users.findOne(matchingObj.Female).profile.name;
+      modalMatchObj.femalefbId =  Meteor.users.findOne(matchingObj.Female).profile.id;
+
+
+      em.emit('newMatch',modalMatchObj);
+
+
+    }
+
     return matchingObj.Status===2 ? matchingObj._id : false;
 
 
@@ -38,6 +60,8 @@ Meteor.methods({
     modifier.$push = {chat:chatObj};
     Matching.update(dataObject._id,modifier);
 
+    Meteor.users.update({_id:chatObj.to},{$inc:{'profile.unRead':1}});
+
   },
   'setbadge':function (arr) {
     console.log(arr);
@@ -46,5 +70,8 @@ Meteor.methods({
   },
   'setNoticeFalse':function (argument) {
     Meteor.users.update(Meteor.userId(),{$set:{notice:false}});
+  },
+  'setRead':function (argument) {
+    Meteor.users.update(Meteor.userId(),{$set:{'profile.unRead':0}});
   }
 });

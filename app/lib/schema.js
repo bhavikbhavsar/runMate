@@ -5,7 +5,8 @@ schema.profile={
   "gender":"",
   "link":"",
   "id":"",
-  "name":""
+  "name":"",
+  "unRead":0
 };
 
 
@@ -28,4 +29,13 @@ schema.chatObj={
   "to":"",
   "createdAt":"",
   "text":""
+};
+
+
+schema.modalMatch = {
+      maleName:"",
+      femaleName:"",
+      malefbID:"",
+      femalefbId:"",
+      chatroomId:"",
 };
