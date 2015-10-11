@@ -3,6 +3,9 @@
 Meteor.publish('AllInterest', function () {
   return Interest.find();
 });
+Meteor.publish('AllTracks', function () {
+  return Tracks.find();
+});
 Meteor.publish('AllInterestWithoutMatched', function () {
   var MatchingList = Matching.find({$or:[ {Male:this.userId},{Female:this.userId}  ],Status:2}).fetch();
   var boylist = lodash.map(MatchingList,'Male');
@@ -12,7 +15,7 @@ Meteor.publish('AllInterestWithoutMatched', function () {
   return Interest.find({_id:{$nin:Arr}});
 });
 Meteor.publish('AllInterestWithoutMatchedBytrackId', function (trackId) {
-  var MatchingList = Matching.find({$or:[ {Male:this.userId},{Female:this.userId}  ],Status:2}).fetch();
+  var MatchingList = Matching.find({$or:[ {Male:this.userId},{Female:this.userId}  ]}).fetch();
   var boylist = lodash.map(MatchingList,'Male');
   var girllist = lodash.map(MatchingList,'Female');
   var Arr = lodash.union(boylist,girllist);

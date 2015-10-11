@@ -1,8 +1,3 @@
-var tracks = [];
-
-tracks.push({_id:"DKFLnzXczYXqQ6xrn",name:"Victoria Road between Kennedy Town and Pok Fu Lam Road",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/MaOnShan1-INLINE.jpg?itok=8E6VA9uf"});
-tracks.push({_id:"o9YLiEDZttyRJtWP8",name:"Ma On Shan-Sha Tin Promenade",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/LugardSevern5-INLINE.jpg?itok=sGFsuK_v"});
-tracks.push({_id:"zzkSS4PfhGvyhkfk8",name:"Lugard Road to Severn Road figure-of-eight",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/HKTrail2-INLINE.jpg?itok=Jcjh_76j"});
 
 
 /*****************************************************************************/
@@ -15,8 +10,8 @@ Template.Home.events({
 });
 
 Template.movieCard.events({
-  'click .track':function () {
-    var trackId  = $('.track').data('trackid');
+  'click .track':function (e) {
+    var trackId  = $(e.currentTarget).data('trackid');
     Meteor.call("updateMovie", trackId, function(error, result){
       if(error){
         console.log("error", error);
@@ -31,7 +26,7 @@ Template.movieCard.events({
 /*****************************************************************************/
 Template.Home.helpers({
   'movies':function () {
-    return tracks;
+    return Tracks.find();
   }
 });
 
