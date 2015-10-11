@@ -9,10 +9,11 @@
 
 .chatBox{
   // height: 400px;
-  // height: calc( 100% - 34px );
+  height: calc( 100% - 34px );
   // width: calc(100% - 20px );
   // position: relative;
-  height: 100%;
+  // height: 100%;
+  overflow-y: auto;
 }
 
 .input-group{
