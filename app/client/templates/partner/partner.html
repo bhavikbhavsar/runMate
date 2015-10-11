@@ -1,7 +1,7 @@
 <template name="Partner">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title"> Find you RunMate </h1>
+    <h1 class="title"> find you runmate </h1>
   {{/contentFor}}
 
   {{#contentFor "headerButtonLeft"}}
@@ -14,7 +14,9 @@
           <div class="blur-bg" style="background-image: url({{backgroundUrl}})"></div>
 
           <div class="track-detail">
-            {{trackName}}
+            <div class="overlay"></div>
+            <img src="/image/location_pin.svg">
+            <div class="detail">{{trackName}}</div>
           </div>
               <ul class="stack">
 
@@ -49,7 +51,7 @@
 </template>
 
 <template name="_myModal">
-  {{#ionModal title="Matched!"  }}
+  {{#ionModal title="matched!"  }}
     <div class="modal-container">
 
       <div class="match-pic-container">

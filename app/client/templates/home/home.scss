@@ -45,18 +45,24 @@
 			top: 0;
 			/*background-color: rgba(0,0,0,0.5);*/
 			z-index: 1;
-			background: linear-gradient(rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.5));
+			background: linear-gradient(rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.5));
 		}
 
 		h3 {
 			margin: 0;
 			color: #fff;
 			z-index: 100;
+			line-height: 1.5rem;
+			font-family: SourceSansPro-Semibold;
+			letter-spacing: 0.025rem;
+
 		}
 
 		p {
 			color: #fff;
 			z-index: 100;
+			font-family: SourceSansPro-Regular;
+			letter-spacing: 0.05rem;
 		}
 	}
 }
