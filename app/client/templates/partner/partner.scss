@@ -179,3 +179,79 @@
     }
   }
 }
+
+.modal-container {
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  @extend %flex-column-container;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #222;
+
+  .match-pic-container {
+    @extend %flex-row-container;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    margin-bottom: 10%;
+
+    .partner-pic {
+      margin-right: -12px;
+      z-index: 100;
+    }
+
+    .my-pic {
+      margin-left: -12px;
+      z-index: 80;
+    }
+  }
+
+  .my-pic, .partner-pic {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 15vw;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    border: 6px solid $appMainColor;
+  }
+
+  .match-text, .start-chatting-btn {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 2.0rem;
+  }
+
+  .match-text {
+    color:#efefef;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .start-chatting-btn {
+    height: 40px;
+    border: 1px solid $appMainColor;
+    color: $appMainColor;
+    border-radius: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    padding-top: 2px;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+
+    transition: background-color 0.2s linear, color 0.2s linear;
+
+    &:hover, &:active {
+      background-color: $appMainColor;
+      color: #fff;
+    }
+  }
+}
+
+

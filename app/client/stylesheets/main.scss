@@ -18,7 +18,7 @@ a.tab-item.active {
   }
 }
 
-i.icon.ion-ios-arrow-back {
+i.icon.ion-ios-arrow-back, i.icon.ion-ios-close-empty {
   color: $appMainColor;
 }
 
@@ -31,7 +31,7 @@ div.bar.bar-header.bar-stable {
   background-color: #fff;
   border-color: rgba(0,0,0,0.14);
 
-  h1 {
+  h1,h2 {
     color: $appMainColor;
   }
 }
@@ -62,6 +62,11 @@ div.tabs {
           flex-direction: column;
 }
 
+@font-face {
+  font-family: MJF;
+  src: url(/font/MJF.ttf);
+}
+
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 
@@ -69,3 +74,4 @@ div.tabs {
 @import "client/templates/partner/partner.scss";
 @import "client/templates/home/home.scss";
 @import "client/templates/login/login.scss";
+@import "client/templates/match_list/match_list.scss";

@@ -76,6 +76,7 @@ Template.Chatroom.onCreated(function () {
 });
 
 Template.Chatroom.onRendered(function () {
+  Session.set('ionTab.current','/MatchList');
 });
 
 Template.Chatroom.onDestroyed(function () {

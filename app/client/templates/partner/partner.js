@@ -109,6 +109,7 @@ Template.Partner.onRendered(function () {
                 IonModal.open('_myModal',{
                   partner:Meteor.users.findOne(userId).profile.name,
                   targetId:userId,
+                  chatroomId:result,
                   myId:Meteor.userId()
                 });
             }

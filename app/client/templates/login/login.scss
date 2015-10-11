@@ -3,7 +3,7 @@
 /*****************************************************************************/
 .login {
 	@extend %flex-column-container;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 100%;
 	position: relative;
@@ -21,10 +21,36 @@
 	}
 
 	.logo-container {
+		@extend %flex-column-container;
+		margin-top: 28%;
+		justify-content: center;
+		align-items: center;
 
-		h1,h3 {
+		img {
+			width: 85%;
+		}
+		h1 {
+			font-family: MJF;
 			color: #fff;
+			font-size: 2.8rem;
+			margin-top: -20px;
+			text-shadow: 0px 1px 2px rgba(0,0,0,0.6);
 		}
 		
+	}
+
+	.fb-login-btn{
+		@extend %flex-column-container;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		bottom: 44px;
+		width: 100%;
+		cursor: pointer;
+		// height: 44px;
+		
+		img {
+			width: 80%;
+		}
 	}
 }
