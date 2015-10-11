@@ -1,7 +1,45 @@
 /*****************************************************************************/
 /* main: Style */
 /*****************************************************************************/
+$appMainColor: rgba(240,153,5,1.0);
+
 .main {
+}
+
+a, a:hover, a:visited, a:active, a:link{
+  text-decoration: none;
+  color: inherit;
+}
+
+a.tab-item.active {
+  color: $appMainColor;
+  i {
+    color: $appMainColor;
+  }
+}
+
+i.icon.ion-ios-arrow-back {
+  color: $appMainColor;
+}
+
+div.content.overflow-scroll.has-header.has-tabs {
+  // background-color: rgba(240,153,5,1.0);
+  background-color: #efefef;
+}
+
+div.bar.bar-header.bar-stable {
+  background-color: #fff;
+  border-color: rgba(0,0,0,0.14);
+
+  h1 {
+    color: $appMainColor;
+  }
+}
+
+div.tabs {
+  // border-color: rgba(240,153,5,1.0);
+  border-color: #efefef;
+  background-color: #fff;
 }
 
 %flex-bare-container {
@@ -29,3 +67,5 @@
 
 @import "client/templates/chatroom/chatroom.scss";
 @import "client/templates/partner/partner.scss";
+@import "client/templates/home/home.scss";
+@import "client/templates/login/login.scss";

@@ -16,8 +16,39 @@
 }
 
 .input-group{
+  @extend %flex-row-container;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
+  height: 42px;
+  background-color: #dedede;
+  left: 0;
+  right: 0;
   bottom: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  input.text.form-control {
+    height: 30px;
+    margin-right: 8px;
+    border-radius: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  span.input-group-addon.send{
+    width: 60px;
+    font-size: 1.2em;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: $appMainColor;
+    cursor: pointer;
+
+    &:active {
+      color: #333;
+    }
+  }
 }
 
 
@@ -26,25 +57,31 @@
   text-align: left;
   .bubble {
     float: right;
-    background: #C8EBB0;
+    background: #ffd169;
+
+    color: #222;
+    letter-spacing: 0.05rem;
 
     position: relative;
     max-width: 50vw;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 10px;
-    padding-left: 10px;
-    -moz-border-radius:    3px;
-    -webkit-border-radius: 3px;
-    border-radius:         3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    -moz-border-radius:    12px;
+    -webkit-border-radius: 12px;
+    border-radius:         12px;
+
+    margin: 8px 16px 8px 16px;
   }
   .bubble:before {
-    border-left: 12px solid #C8EBB0;//was not defined with .bubble
+    border-left: 12px solid #ffd169;//was not defined with .bubble
     left: 100%;
+    // border-right: 12px solid #000;
 
     content:"";
     position: absolute;
-    //top: 26px;
+    bottom: 10px;
     width: 0;
     height: 0;
     border-top: 3px solid transparent;
@@ -56,24 +93,30 @@
   text-align: left;
   .bubble {
     float: left;
-    background: #EAEAEA;
+    background: #c1e0fe;
+
+    color: #222;
+    letter-spacing: 0.05rem;
 
     position: relative;
     max-width: 50vw;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 10px;
-    padding-left: 10px;
-    -moz-border-radius:    3px;
-    -webkit-border-radius: 3px;
-    border-radius:         3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    -moz-border-radius:    12px;
+    -webkit-border-radius: 12px;
+    border-radius:         12px;
+
+    margin: 8px 16px 8px 16px;
   }
   .bubble:before {
-    border-right: 12px solid #EAEAEA;//was not defined with .bubble
+    border-right: 12px solid #c1e0fe;//was not defined with .bubble
     right: 100%;
 
     content:"";
     position: absolute;
+    bottom: 10px;
     width: 0;
     height: 0;
     border-top: 3px solid transparent;

@@ -11,21 +11,26 @@
   {{#ionView}}
     {{#ionContent}}
         <div class="partner">
-              <ul class="stack"  width="300">
+          <div class="blur-bg" style="background-image: url({{backgroundUrl}})"></div>
+
+          <div class="track-detail">
+            {{trackName}}
+          </div>
+              <ul class="stack">
 
               {{#with partner }}
 
                   {{#each partner }}
 
                       <li class="card" data-userid={{userId}} >
-
+                        <div class="item name">
+                          {{gatName}}
+                        </div>
 
                         <div class="item item-image" style="background-image: url(http://graph.facebook.com/{{fbID}}/picture?type=large&width=300&height=445)">
                           <!-- <img src="" data-userid={{userId}} > -->
                         </div>
-                        <div class="item name">
-                          {{gatName}}
-                        </div>
+                        
                         <div class="rubber_stamp Nope">Nope</div>
                         <div class="rubber_stamp Like">Like</div>
                       </li>

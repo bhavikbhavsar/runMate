@@ -1,0 +1,76 @@
+/*****************************************************************************/
+/* Home: Style */
+/*****************************************************************************/
+.home {
+	.track-cell {
+		@extend %flex-column-container;
+		-webkit-justify-content: flex-end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		-webkit-align-items: flex-start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		background-color: rgba(0,0,0,0);
+
+		height: 180px;
+		
+		position: relative;
+		margin-bottom: 1px;
+		/*margin-top: 1px;*/
+
+
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-bottom: 8px;
+
+
+    border-color: rgba(0,0,0,0);
+    border-width: 0;
+
+		/*box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);*/
+
+		&:active {
+			box-shadow: 0 0px 4px rgba(0,0,0,0.4) inset;
+		}
+
+		.overlay {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			/*background-color: rgba(0,0,0,0.5);*/
+			z-index: 1;
+			background: linear-gradient(rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.5));
+		}
+
+		h3 {
+			margin: 0;
+			color: #fff;
+			z-index: 100;
+		}
+
+		p {
+			color: #fff;
+			z-index: 100;
+		}
+	}
+}
+
+/*.blur-bg {
+  background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(images/bg.jpg);
+  background-size: auto 100%;
+  background-position: center center; 
+  background-repeat:no-repeat;
+  left:-15px;
+  right:-15px;
+  top:-15px;
+  bottom:-15px;
+  filter: blur(10px) brightness(0.75);
+  position: absolute;
+  z-index: -1;
+}*/
