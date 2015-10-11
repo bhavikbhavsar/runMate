@@ -77,6 +77,15 @@ Template.Chatroom.onCreated(function () {
 
 Template.Chatroom.onRendered(function () {
   Session.set('ionTab.current','/MatchList');
+  Meteor.call("setNoticeFalse", function(error, result){
+    if(error){
+      console.log("error", error);
+    }
+    if(result){
+
+    }
+  });
+
 });
 
 Template.Chatroom.onDestroyed(function () {

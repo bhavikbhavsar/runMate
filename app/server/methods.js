@@ -14,8 +14,8 @@ Meteor.methods({
     }});
   },
   'createMatching':function (dataObject) {
-    // Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
-    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:2}});
+    Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:1}});
+    // Matching.upsert(lodash.omit(dataObject,'Status'),{$inc:{Status:2}});
 
 
     var matchingObj = Matching.findOne(lodash.omit(dataObject,'Status'));
