@@ -11,9 +11,12 @@ App.setPreference('StatusBarStyle', 'lightcontent');
 
 App.icons({
 
+'iphone' : 'resource/appIcon/iOS/Icon-60.png',
+'iphone_2x' : 'resource/appIcon/iOS/Icon-120.png',
+'iphone_3x' : 'resource/appIcon/iOS/Icon-180@3x.png',
 
-  'android_ldpi': 'resource/man24/android/drawable-ldpi/ic_launcher.png',
-'android_mdpi': 'resource/man24/android/drawable-mdpi/ic_launcher.png',
-'android_hdpi': 'resource/man24/android/drawable-hdpi/ic_launcher.png',
-'android_xhdpi': 'resource/man24/android/drawable-xhdpi/ic_launcher.png'
+'android_ldpi': 'resource/appIcon/android/ldpi.png',
+'android_mdpi': 'resource/appIcon/android/mdpi.png',
+'android_hdpi': 'resource/appIcon/android/hdpi.png',
+'android_xhdpi': 'resource/appIcon/android/xhdpi.png'
 });
