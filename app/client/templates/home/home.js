@@ -11,7 +11,9 @@ Template.Home.events({
 
 Template.movieCard.events({
   'click .track':function (e) {
+    console.log(e);
     var trackId  = $(e.currentTarget).data('trackid');
+    console.log(trackId);
     Meteor.call("updateMovie", trackId, function(error, result){
       if(error){
         console.log("error", error);
@@ -37,6 +39,11 @@ Template.Home.onCreated(function () {
 });
 
 Template.Home.onRendered(function () {
+  console.log(this);
+  this.x= ReactiveVar("");
+
+
+
 });
 
 Template.Home.onDestroyed(function () {

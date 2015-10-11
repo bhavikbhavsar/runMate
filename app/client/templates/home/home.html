@@ -28,7 +28,8 @@
 
 <template name="movieCard">
 
-  <a class="track-cell" href="{{ pathFor 'Partner' trackId=_id }}" style = "background-image: url({{pic}})">
+  <!-- <a class="track-cell" href="{{ pathFor 'Partner' trackId=_id }}" style = "background-image: url({{pic}})"> -->
+  <a class="track-cell track"  style = "background-image: url({{pic}})" data-trackid="{{_id}}">
     <div class="overlay"></div>
     <!-- <img src="{{pic}}"> -->
     <h3>{{name}}</h3>

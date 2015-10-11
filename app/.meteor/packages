@@ -39,3 +39,5 @@ meteoric:ionic-sass
 meteoric:ionicons-sass
 
 sacha:spin
+
+reactive-var

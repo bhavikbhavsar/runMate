@@ -9,12 +9,7 @@ Meteor.startup(function () {
   Matching.remove({});
   Tracks.remove({});
 
-
-
-
-
-
-  var ids = [];
+var ids = [];
 ids.push(560498514); //She is my gf!!!!
 
 
