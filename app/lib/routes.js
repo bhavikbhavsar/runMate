@@ -41,7 +41,7 @@ Router.route('Chatroom',{
 
 Router.route('Home',{
   waitOn:function () {
-    return Meteor.subscribe('AllMovie');
+    return Meteor.subscribe('AllTracks');
   }
 });
 
@@ -56,6 +56,6 @@ Router.route('MatchList',{
 Router.route('Partner',{
   path:"food/:trackId",
   waitOn:function () {
-    return [Meteor.subscribe('AllInterestWithoutMatchedBytrackId',this.params.trackId),Meteor.subscribe('AllUser')];
+    return [Meteor.subscribe('AllInterestWithoutMatchedBytrackId',this.params.trackId),Meteor.subscribe('AllUser'),Meteor.subscribe('AllTracks')];
   }
 });

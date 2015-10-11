@@ -7,19 +7,25 @@ Meteor.startup(function () {
   Meteor.users.remove({});
   Interest.remove({});
   Matching.remove({});
+  Tracks.remove({});
+
+
+
+
+
 
   var ids = [];
-  ids.push(560498514); //She is my gf!!!!
+ids.push(560498514); //She is my gf!!!!
 
 
-  ids.push(503674580);
-  ids.push(100003743012797);
-  ids.push(1428036985);
-  ids.push(19614945368);
-  ids.push(309787872509777);
-  ids.push(1712329320);
+ids.push(503674580);
+ids.push(100003743012797);
+ids.push(1428036985);
+ids.push(19614945368);
+ids.push(309787872509777);
+ids.push(1712329320);
 
-  ids.push(100000461840895);
+ids.push(100000461840895);
 ids.push(100007881438763);
 ids.push(334272573297217);
 ids.push(1136260708);
@@ -38,11 +44,26 @@ ids.push(839875251);
 ids.push(705687935);
 ids.push(557945711);
 ids.push(100000022215260);
+
     if(Meteor.users.find().count()===0){
+
+      var tracks = [];
+
+      tracks.push({distict:"Pok Fu Lam",distance:"4.1km",name:"Victoria Road between Kennedy Town and Pok Fu Lam Road",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/MaOnShan1-INLINE.jpg?itok=8E6VA9uf"});
+      tracks.push({distict:"Ma On Shan",distance:"6.2km",name:"Ma On Shan-Sha Tin Promenade",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/LugardSevern5-INLINE.jpg?itok=sGFsuK_v"});
+      tracks.push({distict:"Mid Levels",distance:"8.0km",name:"Lugard Road to Severn Road figure-of-eight",pic:"http://i.cdn.travel.cnn.com/sites/default/files/styles/inline_image_624x416/public/2011/09/23/HKTrail2-INLINE.jpg?itok=Jcjh_76j"});
+      tracks.push({distict:"Sai Kung",distance:"2.6km",name:"Clear Water Bay",pic:"http://www.scmp.com/sites/default/files/styles/486w/public/2015/01/22/clearwater_bay_bruce_yan.jpg?itok=Qm5G7_WZ"});
+
+      tracks.forEach(function (element,index,array) {
+        Tracks.insert(element);
+      });
+
+
+
       ids.forEach(function (element, index, array) {
 
         var genderArr = ['male','female'];
-        var user =  Fake.user();
+        var user =  Fake.user();  // for demo, name is generated
         var fbId =  element;
         var link =  "http://graph.facebook.com/"+fbId+"/picture?type=square";
         var gender = lodash.sample(genderArr);
@@ -58,7 +79,7 @@ ids.push(100000022215260);
         };
         var userId = Meteor.users.insert(dataObject);
 
-        var movie = ["DKFLnzXczYXqQ6xrn", "o9YLiEDZttyRJtWP8", "zzkSS4PfhGvyhkfk8"];
+        var movie = lodash.map(Tracks.find().fetch(),'_id');
 
 
         var movieData={

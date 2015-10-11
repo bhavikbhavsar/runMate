@@ -3,6 +3,9 @@
 Meteor.publish('AllInterest', function () {
   return Interest.find();
 });
+Meteor.publish('AllTracks', function () {
+  return Tracks.find();
+});
 Meteor.publish('AllInterestWithoutMatched', function () {
   var MatchingList = Matching.find({$or:[ {Male:this.userId},{Female:this.userId}  ],Status:2}).fetch();
   var boylist = lodash.map(MatchingList,'Male');
