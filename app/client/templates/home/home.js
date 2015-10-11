@@ -15,8 +15,8 @@ Template.Home.events({
 });
 
 Template.movieCard.events({
-  'click .track':function () {
-    var trackId  = $('.track').data('trackid');
+  'click .track':function (e) {
+    var trackId  = $(e.currentTarget).data('trackid');
     Meteor.call("updateMovie", trackId, function(error, result){
       if(error){
         console.log("error", error);
