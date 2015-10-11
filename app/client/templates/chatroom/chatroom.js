@@ -32,9 +32,10 @@ Template.Chatroom.events({
 
 
 
-    Meteor.call("sendMsg", dataObject);
-    $('.text').val("");
-
+    if(dataObject.text!==""){
+      Meteor.call("sendMsg", dataObject);
+      $('.text').val("");
+    }
 
   }
 });
@@ -75,6 +76,7 @@ Template.Chatroom.onCreated(function () {
 });
 
 Template.Chatroom.onRendered(function () {
+  Session.set('ionTab.current','/MatchList');
 });
 
 Template.Chatroom.onDestroyed(function () {

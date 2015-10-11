@@ -2,7 +2,7 @@
 /* Login: Event Handlers */
 /*****************************************************************************/
 Template.Login.events({
-  'click .loginWithFacebook':function (argument) {
+  'click .fb-login-btn':function (argument) {
     var per =[];
 
     per.push("user_about_me");
